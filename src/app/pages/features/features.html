@@ -1,0 +1,48 @@
+<div>
+    <h1>Caracteristicas</h1>
+</div>
+<!-- <button><a href="#/switch">Regresar</a></button> -->
+<a href="#/switch" ng-click="toggleComputer()">Encender</a></button>
+<button ng-click="toggleComputer()">ON/Off</button>
+<p>Procesador actual : {{computerProcesador}} </p>
+
+<form name="myForm">
+    <label for="procesadorSelect"> Procesador: </label><br>
+    <select name="procesadorSelect" id="procesadorSelect">
+                <option ng-repeat="processor in ListProcesors" ng-value="$index">{{processor.name}}</option>
+    </select><br>
+</form>
+
+<!-- <div ng-repeat="processor in ListProcesors">{{processor.name}}</div> -->
+<!-- <div ng-controller="ProcessorsService">
+        
+        <select class="ProcessorsService" ng-repeat="processor in processor.name">
+            <option value=""> {{day.datetime}} </option>
+        </select>
+        <p></p>
+        <button></button>
+    </div> -->
+
+<!-- <div>
+        <select name="ram" id="ramMemory" ng-model="data.ramMemorySelected">
+        <option value="">RAM</option>
+        <option value="{{element}}" ng-repeat="element in lista">{{element.ramMemory}}</option>
+        </select>
+    </div> -->
+
+<!-- <div>
+        <h1>HDD</h1>
+        <select>
+
+        </select>
+        <p></p>
+        <button></button>
+    </div> -->
+
+<!-- <div>
+    <h1>Tarjeta grafica</h1>
+    <select>
+        
+        </select>
+    <p></p>
+    <button></button> -->

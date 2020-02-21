@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300' rel='stylesheet' type='text/css'>
+    <!-- <link href="css/main.css" rel="stylesheet" /> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+    <!-- Include the AngularJS routing library -->
+    <script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
+</head>
+
+<body ng-app="myApp">
+    <!-- <div class="header">
+        <div class="container" ng-controller="SwitchController">
+            <h1>My computer</h1>
+            <p>{{name}}</p>
+        </div>
+    </div> -->
+    <div class="container" ng-view></div>
+
+    <!-- Modules -->
+    <script src="app/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="app/pages/switch/SwitchController.js"></script>
+    <script src="app/pages/features/FeaturesController.js"></script>
+
+    <!-- Services -->
+    <script src="app/services/ComputerService.js"></script>
+    <script src="app/services/ProcessorsService.js"></script>
+    <!-- <script src="app/services/HddService.js"></script> -->
+    <!-- <script src="app/services/RamService.js"></script> -->
+
+</body>
+
+</html>
+
+<!-- recursos -->
+<!-- hdd -->
+<!-- https://demo6292426.mockable.io/hddList -->
+<!-- processors -->
+<!-- http://demo6292426.mockable.io/processors -->
+<!-- memoy -->
+<!-- http://demo6292426.mockable.io/ramMemory -->
