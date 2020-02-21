@@ -7,6 +7,7 @@ function FeaturesController($scope, ComputerService, ProcessorsService, $locatio
     $scope.computerProcesador = ComputerService.computerProcesador.name;
 
 
+
     $scope.toggleComputer = function() {
         //ComputerService.toggleComputer();
         $location.path('/switch');
