@@ -1,51 +1,51 @@
 <div>
-    <h1>Caracteristicas</h1>
+    <h1>Caracteristicas de mi Personaje</h1>
 </div>
 <!-- <button><a href="#/switch">Regresar</a></button> -->
-<a href="#/switch" ng-click="toggleComputer()">Encender</a></button>
-<button ng-click="toggleComputer()">ON/Off</button>
-<p>Procesador actual : {{computerProcesador}} </p>
-<p>Ram actual : {{computerProcesador}} </p>
-<p>HDD actual : {{computerProcesador}} </p>
-<p>Tarjeta grafica : {{computerProcesador}} </p>
+<br>
+<!-- <a href="#/switch" ng-click="togglePersonaje()">Encender</a></button> -->
+<div>
+    <div ng-show="!personajeStatusFeature">
+        <p>En este momento se puede modificar tu personaje</p>
+        <button ng-click="changeViewtoSwitch()"> Regresar </button>&nbsp;&nbsp;
+        <!-- <button ng-click="togglePersonaje()"> Modificar Estado de modificacion</button> -->
+    </div>
+
+    <div ng-show="personajeStatusFeature">
+        <p>En este momento NO se puede modificar tu personaje</p>
+        <button ng-click="changeViewtoSwitch()"> Regresar </button>&nbsp;&nbsp;
+        <!-- <button ng-click="togglePersonaje()"> Modificar Estado de modificacion</button> -->
+    </div>
+</div>
+
+<br>
+
+<p>Personaje : {{personajeNombre}} </p>
+<p>Especie: {{personajeSpecies}}</p>
+<p>StarShips: {{personajeStarShips}}</p>
+<p>Vehiculos: {{personajeVehicles}}</p>
+<p>Planeta: {{personajePlanets}}</p>
+
+<br>
 
 <form name="myForm">
-    <label for="procesadorSelect"> Procesador: </label><br>
-    <select name="procesadorSelect" id="procesadorSelect">
-                <option ng-repeat="processor in ListProcesors" ng-value="$index">{{processor.name}}</option>
-    </select><br>
+    <label for="SpeciesSelect"> Especie del personaje Personaje: </label><br>
+    <select name="SpeciesSelect" id="SpeciesSelect" ng-model="SpeciesSelect" ng-change="updateSpeciesSelect()" ng-disabled="personajeStatusFeature"> 
+                <option ng-repeat="species in SpeciesServiceList" ng-value="$index">{{species.name}}</option>
+    </select><br><br><br>
+    <!-- updateStarShipsSelect -->
+    <label for="starShipSelect"> StarShips del personaje Personaje: </label><br>
+    <select name="starShipSelect" id="starShipSelect" ng-model="StarShipsSelect" ng-change="updateStarShipsSelect()" ng-disabled="personajeStatusFeature">
+                <option ng-repeat="starShip in StarShipsList" ng-value="$index">{{starShip.name}}</option>
+    </select><br><br><br>
+    <!-- updateVehiclesSelect -->
+    <label for="VehicleSelect"> Vehiculos del personaje Personaje: </label><br>
+    <select name="VehicleSelect" id="VehicleSelect" ng-model="VehicleSelect" ng-change="updateVehiclesSelect()" ng-disabled="personajeStatusFeature">
+                <option ng-repeat="Vehicle in VehiclesServiceList" ng-value="$index">{{Vehicle.name}}</option>
+    </select><br><br><br>
+
+    <label for="PlanetsSelect"> Planeta del personaje Personaje: </label><br>
+    <select name="PlanetsSelect" id="PlanetsSelect" ng-model="PlanetsSelect" ng-change="updatePlanetsSelect()" ng-disabled="personajeStatusFeature">
+                <option ng-repeat="Planets in PlanetServiceList" ng-value="$index">{{Planets.name}}</option>
+    </select><br><br><br>
 </form>
-
-<!-- <div ng-repeat="processor in ListProcesors">{{processor.name}}</div> -->
-<!-- <div ng-controller="ProcessorsService">
-        
-        <select class="ProcessorsService" ng-repeat="processor in processor.name">
-            <option value=""> {{day.datetime}} </option>
-        </select>
-        <p></p>
-        <button></button>
-    </div> -->
-
-<!-- <div>
-        <select name="ram" id="ramMemory" ng-model="data.ramMemorySelected">
-        <option value="">RAM</option>
-        <option value="{{element}}" ng-repeat="element in lista">{{element.ramMemory}}</option>
-        </select>
-    </div> -->
-
-<!-- <div>
-        <h1>HDD</h1>
-        <select>
-
-        </select>
-        <p></p>
-        <button></button>
-    </div> -->
-
-<!-- <div>
-    <h1>Tarjeta grafica</h1>
-    <select>
-        
-        </select>
-    <p></p>
-    <button></button> -->

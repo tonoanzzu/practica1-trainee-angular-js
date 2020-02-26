@@ -1,9 +1,18 @@
 <div>
-    <h1>Agregando html switch</h1>
-
+    <h1>Configuracion de personaje</h1>
 </div>
 <div>
     <!-- <a href="#/features" ng-click="toggleComputer()">Encender</a></button> -->
-    <button ng-click="toggleComputer()"> ON/Off</button>
+    <div ng-show="!getPersonajeStatus()">
+        <p>Se puede modificar</p>
+        <button ng-click="changeViewtoFeatures()"> Ver detalle</button>&nbsp;&nbsp;
+        <button ng-click="togglePersonaje()"> Modificar Estado de modificacion</button>
+    </div>
+
+    <div ng-show="getPersonajeStatus()">
+        <p>No se puede modificar</p>
+        <button ng-click="changeViewtoFeatures()"> Ver detalle</button>&nbsp;&nbsp;
+        <button ng-click="togglePersonaje()"> Modificar Estado de modificacion</button>
+    </div>
     <!-- <button><a href="#/features">Encender</a></button> -->
 </div>

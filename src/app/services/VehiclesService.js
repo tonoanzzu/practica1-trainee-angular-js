@@ -1,5 +1,5 @@
-app.factory('RamService', function($http) {
-    return $http.get('http://demo6292426.mockable.io/ramMemory')
+app.factory('VehiclesService', function($http) {
+    return $http.get('https://swapi.co/api/vehicles/')
         .success(function(data) {
             return data;
         })

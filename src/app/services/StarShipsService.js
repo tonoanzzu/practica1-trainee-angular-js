@@ -1,5 +1,5 @@
-app.factory('HddService', function($http) {
-    return $http.get('https://demo6292426.mockable.io/hddList')
+app.factory('StarShipsService', function($http) {
+    return $http.get('https://swapi.co/api/starships/')
         .success(function(data) {
             return data;
         })
