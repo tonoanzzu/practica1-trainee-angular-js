@@ -1,6 +1,7 @@
 app.controller('SwitchController', SwitchController);
 
 function SwitchController($scope, PersonajeService, $location) {
+    $scope.personajeStatusSwitch = PersonajeService.personajeStatus
     $scope.togglePersonaje = function() {
         PersonajeService.togglePersonaje();
         $location.path('/features');

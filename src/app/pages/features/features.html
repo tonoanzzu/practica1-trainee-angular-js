@@ -1,51 +1,93 @@
-<div>
-    <h1>Caracteristicas de mi Personaje</h1>
+<div class="featuresHeader">
+    <h1 class="featuresHeaderH1">Caracteristicas de mi Personaje</h1>
 </div>
-<!-- <button><a href="#/switch">Regresar</a></button> -->
 <br>
-<!-- <a href="#/switch" ng-click="togglePersonaje()">Encender</a></button> -->
 <div>
-    <div ng-show="!personajeStatusFeature">
-        <p>En este momento se puede modificar tu personaje</p>
-        <button ng-click="changeViewtoSwitch()"> Regresar </button>&nbsp;&nbsp;
-        <!-- <button ng-click="togglePersonaje()"> Modificar Estado de modificacion</button> -->
+    <div ng-show="!personajeStatusFeature" class="classGreenAlert">
+        <p ng-class="{'greenClass': personajeStatusFeature}">En este momento se puede modificar tu personaje</p>
     </div>
 
-    <div ng-show="personajeStatusFeature">
+    <div ng-show="personajeStatusFeature" class="classRedAlert">
         <p>En este momento NO se puede modificar tu personaje</p>
-        <button ng-click="changeViewtoSwitch()"> Regresar </button>&nbsp;&nbsp;
-        <!-- <button ng-click="togglePersonaje()"> Modificar Estado de modificacion</button> -->
+    </div>
+
+    <div class="botonera">
+        <div>
+            <button class="btn btn-primary" ng-click="changeViewtoSwitch()"> Regresar </button>&nbsp;&nbsp;
+        </div>
     </div>
 </div>
-
 <br>
-
-<p>Personaje : {{personajeNombre}} </p>
-<p>Especie: {{personajeSpecies}}</p>
-<p>StarShips: {{personajeStarShips}}</p>
-<p>Vehiculos: {{personajeVehicles}}</p>
-<p>Planeta: {{personajePlanets}}</p>
-
+<div class="boxConfiguration">
+    <div class="dataBox">
+        <div class="textContainer">
+            <p>Personaje : </p>
+        </div>
+        <div class="textContainer">
+            <p>{{personajeNombre}} </p>
+        </div>
+    </div>
+</div>
+<div class="boxConfiguration">
+    <div class="dataBox">
+        <div class="textContainer">
+            <p>Especie : </p>
+        </div>
+        <div class="textContainer">
+            <p>{{personajeSpecies}} </p>
+        </div>
+    </div>
+    <div class="dataBox">
+        <div class="textContainer">
+            <p>StarShips : </p>
+        </div>
+        <div class="textContainer">
+            <p>{{personajeStarShips}} </p>
+        </div>
+    </div>
+    <div class="dataBox">
+        <div class="textContainer">
+            <p>Vehiculos : </p>
+        </div>
+        <div class="textContainer">
+            <p>{{personajeVehicles}} </p>
+        </div>
+    </div>
+    <div class="dataBox">
+        <div class="textContainer">
+            <p>Planeta : </p>
+        </div>
+        <div class="textContainer">
+            <p>{{personajePlanets}} </p>
+        </div>
+    </div>
+</div>
 <br>
-
 <form name="myForm">
-    <label for="SpeciesSelect"> Especie del personaje Personaje: </label><br>
-    <select name="SpeciesSelect" id="SpeciesSelect" ng-model="SpeciesSelect" ng-change="updateSpeciesSelect()" ng-disabled="personajeStatusFeature"> 
-                <option ng-repeat="species in SpeciesServiceList" ng-value="$index">{{species.name}}</option>
-    </select><br><br><br>
-    <!-- updateStarShipsSelect -->
-    <label for="starShipSelect"> StarShips del personaje Personaje: </label><br>
-    <select name="starShipSelect" id="starShipSelect" ng-model="StarShipsSelect" ng-change="updateStarShipsSelect()" ng-disabled="personajeStatusFeature">
-                <option ng-repeat="starShip in StarShipsList" ng-value="$index">{{starShip.name}}</option>
-    </select><br><br><br>
-    <!-- updateVehiclesSelect -->
-    <label for="VehicleSelect"> Vehiculos del personaje Personaje: </label><br>
-    <select name="VehicleSelect" id="VehicleSelect" ng-model="VehicleSelect" ng-change="updateVehiclesSelect()" ng-disabled="personajeStatusFeature">
-                <option ng-repeat="Vehicle in VehiclesServiceList" ng-value="$index">{{Vehicle.name}}</option>
-    </select><br><br><br>
+    <div class="boxConfiguration">
 
-    <label for="PlanetsSelect"> Planeta del personaje Personaje: </label><br>
-    <select name="PlanetsSelect" id="PlanetsSelect" ng-model="PlanetsSelect" ng-change="updatePlanetsSelect()" ng-disabled="personajeStatusFeature">
+        <div><label class="labelFormat" for="SpeciesSelect"> Especie del personaje Personaje: </label><br>
+            <select name="SpeciesSelect" id="SpeciesSelect" ng-model="SpeciesSelect" ng-change="updateSpeciesSelect()" ng-disabled="personajeStatusFeature" class="form-control">
+                <option ng-repeat="species in SpeciesServiceList" ng-value="$index">{{species.name}}</option>
+            </select>
+        </div>
+        <!-- updateStarShipsSelect -->
+        <div><label class="labelFormat" for="starShipSelect"> StarShips del personaje Personaje: </label><br>
+            <select name="starShipSelect" id="starShipSelect" ng-model="StarShipsSelect" ng-change="updateStarShipsSelect()" ng-disabled="personajeStatusFeature" class="form-control">
+                <option ng-repeat="starShip in StarShipsList" ng-value="$index">{{starShip.name}}</option>
+            </select>
+        </div>
+        <!-- updateVehiclesSelect -->
+        <div><label class="labelFormat" for="VehicleSelect"> Vehiculos del personaje Personaje: </label><br>
+            <select name="VehicleSelect" id="VehicleSelect" ng-model="VehicleSelect" ng-change="updateVehiclesSelect()" ng-disabled="personajeStatusFeature" class="form-control">
+                <option ng-repeat="Vehicle in VehiclesServiceList" ng-value="$index">{{Vehicle.name}}</option>
+            </select>
+        </div>
+        <div><label class="labelFormat" for="PlanetsSelect"> Planeta del personaje Personaje: </label><br>
+            <select name="PlanetsSelect" id="PlanetsSelect" ng-model="PlanetsSelect" ng-change="updatePlanetsSelect()" ng-disabled="personajeStatusFeature" class="form-control">
                 <option ng-repeat="Planets in PlanetServiceList" ng-value="$index">{{Planets.name}}</option>
-    </select><br><br><br>
+            </select>
+        </div>
+    </div>
+
 </form>

@@ -1,18 +1,24 @@
-<div>
+<div class="classHeaderSwitch">
     <h1>Configuracion de personaje</h1>
 </div>
 <div>
     <!-- <a href="#/features" ng-click="toggleComputer()">Encender</a></button> -->
-    <div ng-show="!getPersonajeStatus()">
-        <p>Se puede modificar</p>
-        <button ng-click="changeViewtoFeatures()"> Ver detalle</button>&nbsp;&nbsp;
-        <button ng-click="togglePersonaje()"> Modificar Estado de modificacion</button>
+    <div ng-show="!personajeStatusSwitch" class="classGreenAlert">
+        <p>En este momento se puede modificar tu personaje</p>
     </div>
 
-    <div ng-show="getPersonajeStatus()">
-        <p>No se puede modificar</p>
-        <button ng-click="changeViewtoFeatures()"> Ver detalle</button>&nbsp;&nbsp;
-        <button ng-click="togglePersonaje()"> Modificar Estado de modificacion</button>
+    <div ng-show="personajeStatusSwitch" class="classRedAlert">
+        <p>En este momento NO se puede modificar tu personaje</p>
     </div>
-    <!-- <button><a href="#/features">Encender</a></button> -->
+
+    <div class="botonera">
+        <div>
+            <button class="btn btn-primary" ng-click="changeViewtoFeatures()"> Ver detalle</button>&nbsp;&nbsp;
+        </div>
+        <div>
+            <button class="btn btn-primary" ng-click="togglePersonaje()"> Modificar Estado de modificacion</button>
+        </div>
+
+    </div>
+
 </div>

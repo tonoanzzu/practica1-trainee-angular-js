@@ -1,7 +1,7 @@
 app.controller('FeaturesController', FeaturesController)
 
 function FeaturesController($scope, PersonajeService, StarShipsService, PlanetsService, SpeciesService, VehiclesService, $location) {
-
+    $scope.personajeStatus = PersonajeService.personajeStatus
     $scope.personajeNombre = PersonajeService.personajeData.name;
     $scope.personajeStarShips = PersonajeService.personajeStarShips.name;
     $scope.personajeVehicles = PersonajeService.personajeVehicles.name;
